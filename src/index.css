@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-main {
+  background-image: url("../src/assets/heroImg/hero-img.jpg");
+  @apply bg-[0_100%] bg-no-repeat bg-cover flex min-h-[1020px] relative pt-[180px];
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hero-banner-content {
+  @apply flex flex-wrap h-full relative z-[2] pt-20;
+}
+
+.title {
+  @apply text-[60px] capitalize font-bold leading-[1.2] mb-[30px] pl-[30px] relative;
+}
+
+.title::after {
+  @apply bg-[#ff8139] content-[""] h-[85%] absolute -translate-y-2/4 w-2.5 z-[1] rounded-[10px] left-0 top-2/4;
+  -webkit-transform: translateY(-50%);
+}
+
+.btn {
+  @apply items-center text-white rounded-[var(--border-radius-base)] text-base font-medium leading-normal relative transition-all duration-[0.2s] px-[25px] py-[10.5px] rounded-md;
+}
+
+.btn.btn-skew {
+  @apply -skew-x-12 ml-[5px]  rounded-none border-0;
+  -webkit-transform: skewX(-12deg);
+}
+
+.btn.btn-skew::before {
+  @apply bg-[hsla(0,0%,100%,0.5)]  content-[""] h-full absolute ease-[ease-in-out] w-0 z-[-1] left-0 top-0;
+}
+
+.btn.btn-skew::after {
+  @apply bg-inherit content-[""] h-full absolute -translate-y-2/4 w-[7px] z-[1] -right-3 top-2/4;
+  -webkit-transform: translateY(-50%);
+}
+
+.btn span {
+  @apply text-[18px] leading-[1.6];
+}
+
+img {
+  @apply h-auto max-w-full align-middle border-none;
+}
+
+.media1 {
+  @apply mt-[-50px] max-w-[800px]  absolute ml-10;
+}
+
+.main-bnr-one .banner-media {
+  @apply relative text-center z-[2];
 }
